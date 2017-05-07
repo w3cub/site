@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[前端网址导航]]></title>
+  <link href="http://site.w3cub.com/atom.xml" rel="self"/>
+  <link href="http://site.w3cub.com/"/>
+  <updated>2017-05-07T23:37:24+08:00</updated>
+  <id>http://site.w3cub.com/</id>
+  <author>
+    <name><![CDATA[w3cub]]></name>
+    
+  </author>
+  <generator uri="http://site.w3cub.com">前端网址导航</generator>
+
+  
+</feed>
