@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /404.html
 
-Sitemap: http://site.w3cub.com/sitemap.xml 
+Sitemap: http://site.w3cub.com/site/sitemap.xml 
