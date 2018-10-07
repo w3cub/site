@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+{% assign groups = site.data.feenav | group_by: "category" | sort: "title" %}
+
+
+<a class="sr-only" id="top"></a>
+<div class="bs-docs-header" id="content" >
+	<div class="container"> <h1>{{site.title}}</h1> <p>{{site.subtitle}} - {{ site.time | date: "%Y-%m-%d" }}</p></div> 
+</div>
+
+<div class="row">
+	<div class="col-md-9" role="main">
+		
+		<div class="">
+			{% for group in groups %}
+			<div class="mod clearfix">	
+				<h2 id="{{ group.name }}">{{ group.name }}</h2>	
+				<ul class="list-inline">
+					{% for item in group.items %}
+					<li class="">
+						<a href="{{ item.link }}" title="{{ item.desc }}" data-toggle="tooltip" target="_blank" >
+							<i class="icon-external-link" aria-hidden="true"></i> {% if site.titlecase %}{{ item.title | titlecase }}{% else %}{{ item.title }}{% endif %}
+						</a>
+					</li>
+					{%endfor%}
+				</ul>
+			</div>
+			{%endfor%}
+		</div>
+	</div>
+	<div class="col-md-3" role="complementary">
+	    <nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix-top">
+	        <ul class="nav bs-docs-sidenav">
+				{% for group in groups %}
+					<li class=""><a href="#{{ group.name }}">{{ group.name }}</a></li>
+				{%endfor%}
+	        </ul> 
+	        <a href="#top" class="back-to-top"> Back to top </a>
+	      </nav>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-9">
+		<div class="clearfix">
+			<div class="search-form">
+				<form class="clearfix" id="searchForm" target="_blank" method="get" action="http://www.baidu.com/s">
+					<input name="word" maxlength="100" id="word" autocomplete="off" class="search-input pull-left">
+					<input type="submit" class="search-btn pull-left" value="百度一下">
+					<input type="hidden" value="sitehao123_pg" name="tn" id="tn">
+					<input type="hidden" value="utf-8" name="ie">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+(function(a) {
+    "use strict";
+    a(function() {
+        var b = a(window),
+            c = a(document.body);
+        c.scrollspy({
+            target: ".bs-docs-sidebar",
+            offset: 100
+        }), b.on("load", function() {
+            c.scrollspy("refresh")
+        }), a('.bs-docs-container [href="#"]').click(function(a) {
+            a.preventDefault()
+        }), setTimeout(function() {
+            var b = a(".bs-docs-sidebar");
+            b.affix({
+                offset: {
+                    top: function() {
+                        var c = b.offset().top,
+                            d = parseInt(b.children(0).css("margin-top"), 10),
+                            e = a(".bs-docs-nav").height();
+                        return this.top = c - e - d
+                    },
+                    bottom: function() {
+                        return this.bottom = a(".bs-docs-footer").outerHeight(!0)
+                    }
+                }
+            })
+        }, 100), setTimeout(function() {
+            a(".bs-top").affix()
+        }, 100),a('[data-toggle="tooltip"]').tooltip();
+
+    })
+})(jQuery);
+</script>

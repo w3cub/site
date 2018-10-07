@@ -1,0 +1,258 @@
+gems: 
+    - jekyll-paginate
+    - jekyll-gist
+    - jekyll-assets
+    - jekyll-sitemap
+
+
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+
+url: http://site.w3cub.com
+title: 前端网址导航
+logo: "&lt;w3cub/&gt;"
+subtitle: 不定期更新网址
+author: w3cub
+simple_search: https://www.google.com/search
+description: 前端网址导航
+keywords: 前端网址,前端,网址导航,frontend,frontend website
+
+
+# Default date format is "ordinal" (resulting in "July 22nd 2007")
+# You can customize the format as defined in
+# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# Additionally, %o will give you the ordinal representation of the day
+date_format: "ordinal"
+
+# RSS / Email (optional) subscription links (change if using something like Feedburner)
+subscribe_rss: /atom.xml
+subscribe_email:
+# RSS feeds can list your email address if you like
+# email: gidcai@gmail.com
+
+avatarimg: "/assets/images/avatar.jpeg"
+
+meta:
+    author:
+        gravatar: 750a24b137f6f1f3313127daf9c9152d   # Gravatar头像标识
+    gapi: http://www.google.com/jsapi               # Google API地址
+    gravatar: https://en.gravatar.com/avatar/        # Gravatar头像服务器地址
+
+
+collections:
+  tools:
+    output: true
+    permalink: /tools/:path/
+  slides:
+    output: true
+    permalink: /slides/:path/
+
+
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# If publishing to a subdirectory as in http://site.com/project set 'root: /project'
+root: /
+permalink: /blog/:year/:month/:day/:title/
+source: source
+destination: public
+
+plugins_dir: plugins
+code_dir: /downloads/code
+category_dir: blog/categories
+tag_dir: blog/tags 
+
+
+
+# markdown: kramdown
+# kramdown:
+#   auto_ids: true
+#   input: GFM
+#   toc_levels: 1..6
+#   smart_quotes: lsquo,rsquo,ldquo,rdquo
+#   enable_coderay: true
+#   hard_wrap: true
+#   syntax_highlighter: rouge
+
+markdown: rdiscount
+rdiscount:
+  extensions: ["autolink", "footnotes", "generate_toc", "smart"]
+  toc_token: "[TOC]"
+
+highlighter: rouge
+# highlighter: pygments # default python pygments have been replaced by pygments.rb
+
+paginate: 10          # Posts per page on the blog index
+paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
+recent_posts: 5       # Posts in the sidebar Recent Posts section
+excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
+excerpt_separator: "<!--more-->"
+
+titlecase: true       # Converts page and post titles to titlecase
+
+# list each of the sidebar modules you want to include, in the order you want them to appear.
+# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
+default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+
+# Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+# post_asides:
+# page_asides:
+
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+# Github repositories
+github_user: icai
+github_repo_count: 0
+github_show_profile_link: true
+github_skip_forks: true
+
+# Twitter
+twitter_user:
+twitter_tweet_button: true
+
+# Google +1
+google_plus_one: false
+google_plus_one_size: medium
+
+# Google Plus Profile
+# Hidden: No visible button, just add author information to search results
+googleplus_user:
+googleplus_hidden: false
+
+facebook_user: "terry.cai.7921"
+
+# Pinboard
+pinboard_user:
+pinboard_count: 3
+
+# Delicious
+delicious_user:
+delicious_count: 3
+
+# Disqus Comments
+disqus_short_name: w3cub
+disqus_show_comment_count: true
+
+# Google Analytics
+google_analytics_tracking_id: UA-64597109-1
+
+# Facebook Like
+facebook_like: false
+
+# weibo
+weibo_user: 328765211
+
+# netease
+# netease_user: 328765211
+
+addthis_profile_id: ra-558841b45b591663
+weibo_share: true
+
+
+
+exclude:
+    - assets/bower/*
+    - assets/fonts/*
+    - assets/stylesheets/*
+
+    - assets/images/bg/*
+    - assets/images/fancybox/*
+    - assets/images/posts/*
+    - assets/images/social/*
+
+    - assets/images/avatar.png
+    - assets/images/bird_32_gray_fail.png
+    - assets/images/bird_32_gray.png
+    - assets/images/code_bg.png
+    - assets/images/dotted-border.png
+    - assets/images/email.png
+    - assets/images/line-tile.png
+    - assets/images/loading_gray.gif
+    - assets/images/loading_pacman.gif
+    - assets/images/noise.png
+    - assets/images/rss.png
+    - assets/images/search.png
+
+    - assets/javascripts/application.js
+    - assets/javascripts/bootstrap-sprockets.js
+    - assets/javascripts/md5.js
+    - assets/javascripts/modernizr-2.0.js
+    - assets/javascripts/twitter.js
+    - assets/javascripts/github.js         
+    - assets/javascripts/octopress.js
+    - assets/javascripts/bootstrap.js
+    - assets/javascripts/jquery.fancybox.pack.js
+    - assets/javascripts/pinboard.js
+    - assets/javascripts/bootstrap.min.js
+    - assets/javascripts/slash.js
+
+    - assets/javascripts/bootstrap/*
+    - assets/javascripts/libs/*
+
+    - assets/reveal.js/css/theme/source/*
+    - assets/reveal.js/css/theme/template/*
+    - assets/reveal.js/index.html
+    - assets/reveal.js/*.md
+
+
+include:
+    - assets/images/avatar.jpeg
+    - assets/javascripts/tools/*
+
+
+assets:
+  # compress:
+  #   css: false | true | default - development: false, production: true
+  #   js: false | true | default - development: false, production: true
+  autowrite: true
+  # cache: false | directory | default: .asset-cache
+  # cache_type: memory | filesystem | default: filesystem
+  # cdn: https://cdn.example.com
+  # skip_baseurl_with_cdn: false
+  # skip_prefix_with_cdn: false
+  prefix: "/assets"
+  digest: true
+
+  autoprefixer:
+    browsers:
+      - "last 2 versions"
+      - "IE >= 9"
+  #
+
+  assets:
+    - "*.eot" 
+    - "*.svg" 
+    - "*.ttf" 
+    - "*.woff" 
+    - "*.woff2" 
+    - "*.jpg" 
+    - "*.gif"
+    - "*.png" 
+    - "application.js" 
+    - "application.css" 
+    - "slide.css"
+  # compress:
+  #   css: sass
+  #   js: uglifier
+
+  sources:
+    - assets/css
+    - assets/images
+    - assets/javascripts
+    - assets/stylesheets
+    - assets/fonts
+
+  # features:
+  #   liquid: true | false | default: false
+  #   integrity: true | false | default: false
+  #   automatic_img_size: true | false | n(fixnum): 2,4,6,8 | default: true
+  #   automatic_img_alt : true | false | default: true

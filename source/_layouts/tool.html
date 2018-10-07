@@ -1,0 +1,20 @@
+---
+layout: default
+single: true
+---
+<article class="tool" >
+	<h1>{%if page.icon %}<i class="fa fa-{{page.icon}}"></i>{% endif %} {{page.title}}</h1>
+	<hr>
+	<div class="content">
+		{{ content }}
+	</div>
+</article>
+{% unless page.sharing == false %}
+	{% include post/sharing.html %}
+{% endunless %}
+{% if site.disqus_short_name and page.comments == true %}
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+</section>
+{% endif %}

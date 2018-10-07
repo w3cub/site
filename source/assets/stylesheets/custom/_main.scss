@@ -1,0 +1,85 @@
+.search-form form {
+    max-width: 580px;
+    margin:0 auto;
+    margin-top: 20px;
+}
+
+.search-form .search-input {
+    font-size: 16px;
+    border: 1px solid #999;
+    border-color: #999 #528cdb #cecece #999;
+    padding: 12px 0 10px 6px;
+    height: 44px;
+    width: 75%;
+    outline: 0;
+    border-radius: 0px;
+    -webkit-box-shadow: 3px 3px 7px -3px #aaa inset;
+    -moz-box-shadow: 3px 3px 7px -3px #aaa inset;
+    box-shadow: 3px 3px 7px -3px #aaa inset
+}
+
+.search-form .search-btn {
+    width: 25%;
+    border: 1px solid #2c85ff;
+    border-bottom-color: #186cdf;
+    padding: 1px 1px 0;
+    height: 44px;
+    color: #fff;
+    background: #2c85ff;
+    cursor: pointer;
+    outline: 0;
+    *border: 0 none;
+    font: 400 14px/40px "microsoft yahei",simsun;
+    border-radius: 0px;
+    vertical-align: top;
+}
+
+.search-form .search-btn-wrap {
+    position: relative;
+    *margin-top: 1px
+}
+
+.search-form .search-btn-wrap:hover:after {
+    content: ' ';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 120px;
+    height: 44px;
+    background: #dedede;
+    z-index: -1
+}
+
+.mod{
+	border: 1px solid #ccc;
+    margin-top: 15px;
+    padding: 10px;
+
+    h2{
+	    margin: 1px;
+		width: 26px;
+		// min-height: 80px;
+		text-align: center;
+		float: left;
+    }
+
+    ul {
+    	margin-left: 34px;
+    }
+    li{
+        padding-bottom: 5px;
+
+        .icon-external-link{
+            width: 14px;
+            height: 14px;
+            background-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="448" height="448" viewBox="0 0 448 448"><path fill="#b7bbc7" d="M352 232v80c0 39.75-32.25 72-72 72h-208c-39.75 0-72-32.25-72-72v-208c0-39.75 32.25-72 72-72h176c4.5 0 8 3.5 8 8v16c0 4.5-3.5 8-8 8h-176c-22 0-40 18-40 40v208c0 22 18 40 40 40h208c22 0 40-18 40-40v-80c0-4.5 3.5-8 8-8h16c4.5 0 8 3.5 8 8zM448 16v128c0 8.75-7.25 16-16 16-4.25 0-8.25-1.75-11.25-4.75l-44-44-163 163c-1.5 1.5-3.75 2.5-5.75 2.5s-4.25-1-5.75-2.5l-28.5-28.5c-1.5-1.5-2.5-3.75-2.5-5.75s1-4.25 2.5-5.75l163-163-44-44c-3-3-4.75-7-4.75-11.25 0-8.75 7.25-16 16-16h128c8.75 0 16 7.25 16 16z"></path></svg>');
+        }
+
+        a {
+                color: #30333C;
+        }
+    }
+}
